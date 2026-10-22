@@ -47,3 +47,15 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Facebook photo downloads: browser profile holds a logged-in session, never commit it
+scripts/.fb-profile/
+docs/research/merci/facebook-photos/*
+!docs/research/merci/facebook-photos/.gitkeep
+!docs/research/merci/facebook-photos/README.md
+
+# Real-ESRGAN binary + model (see tools/README.md) and build caches
+tools/realesrgan/
+
+# Full-size originals from the studio Drive (raw data, kept local)
+docs/research/merci/drive-originals/

@@ -68,3 +68,17 @@ scripts/            # Asset download scripts
 ## Agent Workflow
 - Edit `.agents/skills/clone-website/` for cloning-workflow changes. It is the canonical skill used by Codex, Cursor, and OpenCode.
 - Keep `.claude/commands/clone-website.md` as a thin Claude Code bridge to the canonical skill; do not duplicate the workflow there.
+
+# MERCI studio (this repo's actual project)
+
+This copy of the template is the website for **MERCI studio** (Vietnamese, cream-white theme). Read
+`docs/research/merci/README.md` first: route map, assumptions, draft content, gaps.
+
+- Content lives in `src/data/` (`site.ts`, `categories.ts`, `concepts.ts`, `packages.ts`). Pricing and About copy are drafts
+  while `CONTENT_IS_DRAFT` is true.
+- Photos are generated: edit `scripts/build-merci-assets.py` (concept grouping) and run `python scripts/build-merci-assets.py`.
+  Sources in `docs/research/merci/drive-source/` are 206 px; replace with originals using the same `NN_` prefix.
+- Draggable views (`pan-grid`, `diary-field`, `gallery-strip`) must call `setPointerCapture` only after the drag threshold,
+  otherwise Chrome retargets the click and links inside stop working.
+- Booking has no backend yet (hands off to Zalo / Messenger). Admin inbox is a later phase.
+- Brand and layout are fixed: do not swap the palette or fonts when touching UI.
