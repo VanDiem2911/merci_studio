@@ -79,16 +79,13 @@ DUPLICATES = {
 # Matched by eye (same outfit, props and backdrop), so treat as a good guess.
 FOLDED_SHEETS = {
     66: "hong-phan-bong-bay", 67: "sinh-nhat-bong-so", 72: "lily-hong-quan-jeans", 75: "gau-bong-net-ve",
-    76: "non-coi-vintage", 78: "lily-voan-trang", 79: "vay-do-be-thuy-tinh", 390: "street-den",
+    76: "non-coi-vintage", 78: "lily-gang-ren", 79: "vay-do-be-thuy-tinh", 390: "street-den",
     395: "no-ruy-bang", 396: "lily-vay-trang",
 }
 
 # Order here is the order of the home grid: light and dark shoots alternate.
 CONCEPTS: dict[str, Sets] = {
-    "lily-voan-trang": [
-        ("Voan ren, corset, ngọc trai", [("fb", 11, 20), ("fb", 30, 39)]),
-        ("Lily, jeans, găng ren, rèm trắng", [("fb", 21, 29)]),
-    ],
+    "lily-voan-trang": [("Voan ren, corset, ngọc trai", [("fb", 11, 20), ("fb", 30, 39)])],
     "dem-tuyet-hoc-duong": [("Áo thủy thủ, blazer, đèn lồng (2 ảnh ghép)", [("fbc", 8), ("fbc", 9)])],
     "nang-kem-mu-moc": [("Mũ móc, váy lanh, phông vàng kem (Drive)", [("dr", "26"), ("dr", "30"), ("dr", "34"), ("dr", "36")])],
     "thien-than-canh-den": [("Cánh đen, váy dây, giày cao gót", [("fb", 410, 423)])],
@@ -148,6 +145,7 @@ CONCEPTS: dict[str, Sets] = {
     "ao-len-do-bob": [("Áo len đỏ, tóc bob (ảnh ghép)", [("fbc", 400)])],
     "cuc-hoa-mi": [("Khăn họa tiết hoa nhí, cúc họa mi (Drive)", [("dr", "42"), ("dr", "44"), ("dr", "45"), ("dr", "48")])],
     "vay-den-banh-trang": [("Váy đen, ngọc trai, bánh kem trắng", [("fb", 382, 389)])],
+    "lily-gang-ren": [("Lily, găng ren, quần jeans, rèm xanh trắng", [("fb", 21, 29)])],
     "hai-nguoi": [
         ("Hai người, blazer đen và nâu", [("fb", 201, 210)]),
         ("Hai người, áo trắng quần đen", [("fb", 237, 242)]),

@@ -29,7 +29,7 @@ export default function PricingPage() {
         {PACKAGES.map((p) => (
           <li
             key={p.slug}
-            className={`grid content-start gap-6 border p-6 md:p-8 ${
+            className={`flex flex-col gap-6 border p-6 md:p-8 ${
               p.featured ? "border-ink bg-ink text-cream" : "border-ink/30"
             }`}
           >
@@ -60,7 +60,7 @@ export default function PricingPage() {
             </ul>
             <TransitionLink
               href={`/dat-lich?goi=${p.slug}`}
-              className={`btn-ink ${
+              className={`btn-ink mt-auto ${
                 p.featured ? "!border-cream !bg-cream !text-ink hover:!text-cream [&::before]:!bg-ink-soft" : "is-solid"
               }`}
             >

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { TransitionLink } from "@/components/sites/merci/transition";
 import { WipeImage } from "@/components/sites/merci/wipe-image";
 import { CATEGORIES } from "@/data/categories";
@@ -118,12 +119,10 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <p
-        aria-hidden="true"
-        className="mt-20 select-none text-center font-display text-[22vw] leading-[0.85] tracking-[-0.03em] text-ink/90 md:mt-28"
-      >
-        merci
-      </p>
+      {/* the logo file is 636 px wide: shown no larger than that so it stays sharp */}
+      <div aria-hidden="true" className="mt-20 flex justify-center md:mt-28">
+        <Image src="/sites/merci/logo.png" alt="" width={636} height={248} className="h-auto w-[min(80vw,636px)] select-none" />
+      </div>
     </main>
   );
 }

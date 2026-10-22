@@ -111,55 +111,6 @@
       "height": 1600,
       "tone": "#e1e1e5",
       "set": 1
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-17-42315772.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#c7cfd6",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-18-26c66c21.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#cdd2d6",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-19-270c0a44.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#d2d8dd",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-20-3af90db9.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#dfe6eb",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-21-24648fce.jpg",
-      "width": 1067,
-      "height": 1600,
-      "tone": "#ccd0d3",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-22-5f24bede.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#cdd3da",
-      "set": 2
-    },
-    {
-      "src": "/sites/merci/concepts/lily-voan-trang/lily-voan-trang-23-d1221012.jpg",
-      "width": 1066,
-      "height": 1600,
-      "tone": "#c0c4c9",
-      "set": 2
     }
   ],
   "cuc-vang-nen-xanh": [
@@ -1310,6 +1261,57 @@
       "width": 1067,
       "height": 1600,
       "tone": "#dad3d2",
+      "set": 1
+    }
+  ],
+  "lily-gang-ren": [
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-01-42315772.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#c7cfd6",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-02-26c66c21.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#cdd2d6",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-03-270c0a44.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#d2d8dd",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-04-3af90db9.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#dfe6eb",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-05-24648fce.jpg",
+      "width": 1067,
+      "height": 1600,
+      "tone": "#ccd0d3",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-06-5f24bede.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#cdd3da",
+      "set": 1
+    },
+    {
+      "src": "/sites/merci/concepts/lily-gang-ren/lily-gang-ren-07-d1221012.jpg",
+      "width": 1066,
+      "height": 1600,
+      "tone": "#c0c4c9",
       "set": 1
     }
   ],

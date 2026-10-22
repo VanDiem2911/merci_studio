@@ -252,7 +252,12 @@ export function GalleryStrip({ concepts }: { concepts: Concept[] }) {
       <div
         ref={stage}
         className="absolute inset-0 touch-none"
-        style={{ perspective: "2200px", perspectiveOrigin: "50% 50%" }}
+        style={{
+          perspective: "2200px",
+          perspectiveOrigin: "50% 50%",
+          // photos fade into the cream behind the (transparent) nav, so its text never sits on a photo
+          maskImage: "linear-gradient(to bottom, transparent 0, transparent 2.5rem, #000 7.5rem)",
+        }}
       >
         <div
           className="absolute left-1/2 top-[42%] h-[46vh] max-h-[36rem] -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:h-[54vh] md:max-h-[38rem]"

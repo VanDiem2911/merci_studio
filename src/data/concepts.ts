@@ -57,8 +57,8 @@ const DRAFTS: Draft[] = [
     category: "chan-dung",
     tagline: "Lãng mạn như buổi sáng đầu tiên",
     story:
-      "Voan thêu, corset ren, chuỗi ngọc và những cành lily. Một bộ chân dung thanh khiết trên nền sáng, và một bộ khác ngồi xếp bằng với quần jeans, găng ren giữa rèm trắng.",
-    props: ["Voan ren", "Corset ren", "Hoa lily trắng", "Chuỗi ngọc", "Găng tay ren", "Quần jeans"],
+      "Voan thêu dài chạm sàn, corset ren trắng và chuỗi ngọc trai trên nền xám xanh nhạt. Một bộ chân dung thanh khiết, để ánh sáng mềm làm nhân vật chính.",
+    props: ["Voan ren", "Corset ren", "Chuỗi ngọc", "Váy ngắn ren"],
     moods: ["sang-kem", "co-dien"],
     occasions: ["chan-dung-ca-nhan", "ky-niem"],
   },
@@ -468,6 +468,17 @@ const DRAFTS: Draft[] = [
     props: ["Váy đen", "Chuỗi ngọc trai", "Bánh kem trắng", "Lông vũ"],
     moods: ["sang-kem", "dien-anh"],
     occasions: ["sinh-nhat", "chan-dung-ca-nhan"],
+  },
+  {
+    slug: "lily-gang-ren",
+    name: "Lily & Găng Ren",
+    category: "chan-dung",
+    tagline: "Một bó lily và đôi găng ren",
+    story:
+      "Áo ren trắng, găng tay ren, quần jeans xanh nhạt và những cành lily trắng trước tấm rèm xanh trắng. Ngồi xếp bằng, ngồi nghiêng, voan mỏng cài hoa lily trên tóc: vừa dịu vừa tự nhiên.",
+    props: ["Hoa lily trắng", "Găng tay ren", "Áo ren", "Quần jeans", "Voan mỏng", "Rèm xanh trắng"],
+    moods: ["sang-kem", "co-dien"],
+    occasions: ["chan-dung-ca-nhan", "ky-niem"],
   },
   {
     slug: "hai-nguoi",

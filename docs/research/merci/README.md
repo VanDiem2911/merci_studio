@@ -13,13 +13,13 @@ https://www.markclennon.com/ as a **reference only**. Code, copy, photos and log
 | `/still/[slug]` | `/concept/[slug]` | Title + cover, staggered photos on a 9-column grid with wipe and parallax, previous / next cards |
 | `/motion` (3D reel) | `/bo-suu-tap` | Page-fold reel: portrait cards hinged on the inside of a drum, the centred card lies flat and its neighbours fold towards the viewer; one wheel notch or swipe = one card (`src/lib/wheel.ts`), drag, arrows, centred card opens the collection |
 | `/motion/[slug]` (player) | `/bo-suu-tap/[slug]` | Full-screen photo viewer, tick-mark timeline with previews, info drawer, wheel (one notch = one photo), swipe + arrow keys |
-| `/diary/diary` (grid / globe) | `/nhat-ky` | Scattered photos on an endless canvas, or a 3D photo sphere |
+| `/diary/diary` (grid / globe) | `/nhat-ky` | Grid: every photo fitted in its own cell, whole columns drift at their own speed, nothing overlaps. Globe: the viewer stands inside a sphere tiled with ~900 small photos (150 photos, repeated far apart), tiny at the centre and larger towards the screen edge, only the ones in view are drawn |
 | `/info` | `/gioi-thieu` | About, contact, services list |
 | (MERCI-specific) | `/bang-gia`, `/chon-concept`, `/dat-lich`, `/lien-he` | Pricing, concept picker, booking, contact |
 | `/press/*`, `/subscribe`, `/studio-hq-0817` | not built | No press coverage or newsletter exists for MERCI; nothing was invented |
 
 Shared: wipe page transition, preloader, Lenis smooth scroll on scrolling pages,
-Zalo / Messenger floating buttons. The reference draws its photos in WebGL; this build uses DOM + GSAP + CSS 3D.
+Zalo / Messenger floating buttons (no border). The nav is transparent: its text and logo carry a soft cream halo, and the reel fades its photos out under it. The reference draws its photos in WebGL; this build uses DOM + GSAP + CSS 3D.
 
 ## Photos
 
@@ -44,7 +44,7 @@ It found 154 singles + 14 sheets; 7 originals have no thumbnail (a new pink-back
 
 **The site shows only sharp photos** (`SHARP_ONLY` in the build script): a photo that has no original, only a 206 px
 thumbnail (even AI-upscaled), is left out; a concept with fewer than 4 sharp photos stays hidden (`MIN_PHOTOS`). Result:
-26 of 48 concepts, 226 photos. The 22 hidden concepts keep their copy in `src/data/concepts.ts` (`CONCEPTS` filters out
+27 of 49 concepts, 226 photos. The 22 hidden concepts keep their copy in `src/data/concepts.ts` (`CONCEPTS` filters out
 concepts without photos) and come back by themselves when their originals arrive: add them to the Drive folder, then run
 `download-drive-folder.py`, `match-originals.py`, `build-merci-assets.py`. The category "Chụp ảnh cổ trang" is empty for
 now and shows an "ảnh đang được cập nhật" message (`concept-browser.tsx`).
@@ -88,7 +88,7 @@ viewer keyboard, mobile menu and horizontal overflow at 390 px.
 - 359 of the 585 photos (collage tiles counted one by one) still wait for originals and are hidden, which hides 22 concepts
   entirely; the full list is in `photo-classification.md`.
 - Concept names, taglines and stories for the concepts added from the Facebook photos are drafts from what the photos show.
-- The booking form lists every shown concept as a chip (26); it may deserve grouping by category.
+- The booking form lists every shown concept as a chip (27); it may deserve grouping by category.
 - The diary page shows at most 6 photos per concept (`PHOTOS_PER_CONCEPT`) to keep the canvas and sphere light.
 - Google Maps embed on `/lien-he` loads from Google; it could not be confirmed in headless Chrome.
 - No Vietnamese copy review by a native editor, no real-device (iOS Safari) test, no Lighthouse run.

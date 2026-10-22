@@ -68,7 +68,7 @@ export function SiteHeader() {
 
   return (
     <header ref={header} className="fixed inset-x-0 top-0 z-50">
-      <nav aria-label="Chính" className="container-96 grid grid-cols-[max-content_1fr] items-center gap-4 py-3 [text-shadow:0_0_6px_var(--cream),0_0_14px_var(--cream),0_0_2px_var(--cream)] md:py-4">
+      <nav aria-label="Chính" className="container-96 grid grid-cols-[max-content_1fr] items-center gap-4 py-3 [text-shadow:0_0_2px_var(--cream),0_0_6px_var(--cream),0_0_12px_var(--cream),0_0_22px_var(--cream)] md:py-4">
         <TransitionLink
           href="/"
           aria-label="MERCI studio, trang chủ"
@@ -89,48 +89,68 @@ export function SiteHeader() {
             className="relative flex flex-col items-center md:items-start"
             onMouseEnter={() => matchMedia("(hover: hover)").matches && setDropdown(true)}
             onMouseLeave={() => setDropdown(false)}
+            onFocus={(e) => e.target.matches(":focus-visible") && setDropdown(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget)) setDropdown(false);
+            }}
             data-nav-in
           >
-            <button
-              type="button"
-              className="nav-link text-[2rem] md:text-[1.1rem]"
-              aria-expanded={dropdown}
-              aria-controls="concept-menu"
-              data-open={dropdown || conceptActive}
-              onClick={() => setDropdown((v) => !v)}
-            >
-              Concept
-              <span aria-hidden="true" className="relative ml-1 inline-block size-3">
-                <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
-                <span
-                  className="absolute left-1/2 top-0 h-full w-px bg-current transition-transform duration-300"
-                  style={{ transform: dropdown ? "scaleY(0)" : "scaleY(1)" }}
-                />
-              </span>
-            </button>
+            {/* the word itself is a link to every concept; the topics open on hover or keyboard focus, and on a phone
+                with the +/- button beside the word */}
+            <div className="flex items-center">
+              <span aria-hidden="true" className="size-11 md:hidden" />
+              <TransitionLink
+                href="/concept"
+                onClick={closeAll}
+                aria-current={pathname === "/concept" ? "page" : undefined}
+                aria-controls="concept-menu"
+                data-open={dropdown || conceptActive}
+                className="nav-link text-[2rem] md:text-[1.1rem]"
+              >
+                Concept
+                <span aria-hidden="true" className="relative ml-1 hidden size-3 md:inline-block">
+                  <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+                  <span
+                    className="absolute left-1/2 top-0 h-full w-px bg-current transition-transform duration-300"
+                    style={{ transform: dropdown ? "scaleY(0)" : "scaleY(1)" }}
+                  />
+                </span>
+              </TransitionLink>
+              <button
+                type="button"
+                aria-expanded={dropdown}
+                aria-controls="concept-menu"
+                aria-label={dropdown ? "Thu gọn các chủ đề" : "Mở các chủ đề"}
+                onClick={() => setDropdown((v) => !v)}
+                className="grid size-11 place-items-center md:hidden"
+              >
+                <span aria-hidden="true" className="relative block size-4">
+                  <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+                  <span
+                    className="absolute left-1/2 top-0 h-full w-px bg-current transition-transform duration-300"
+                    style={{ transform: dropdown ? "scaleY(0)" : "scaleY(1)" }}
+                  />
+                </span>
+              </button>
+            </div>
             <div
               id="concept-menu"
-              className={`${dropdown ? "block" : "hidden"} md:absolute md:left-0 md:top-full md:min-w-[14rem] md:pt-1`}
+              className={`${dropdown ? "block" : "hidden"} md:absolute md:left-0 md:top-full md:min-w-[14rem] md:pt-1 ${dropdown ? "md:block" : "md:hidden"}`}
             >
-              <ul ref={list} className="grid gap-1 overflow-hidden text-center md:text-left">
-                <li>
-                  <TransitionLink href="/concept" onClick={closeAll} className="link-line block py-1 font-display text-[1.5rem] uppercase tracking-[0.04em] md:text-[0.95rem]">
-                    Tất cả concept
-                  </TransitionLink>
-                </li>
+              <ul ref={list} className="grid gap-0.5 overflow-hidden text-center md:gap-1 md:text-left">
                 {CATEGORIES.map((c) => (
                   <li key={c.slug}>
                     <TransitionLink
                       href={`/danh-muc/${c.slug}`}
                       onClick={closeAll}
-                      className="link-line block py-1 font-display text-[1.5rem] uppercase tracking-[0.04em] md:text-[0.95rem]"
+                      className="link-line block py-1 font-display text-[1.15rem] uppercase tracking-[0.04em] md:text-[0.95rem]"
                     >
                       {c.short}
                     </TransitionLink>
                   </li>
                 ))}
                 <li>
-                  <TransitionLink href="/chon-concept" onClick={closeAll} className="link-line block py-1 font-display text-[1.5rem] uppercase tracking-[0.04em] md:text-[0.95rem]">
+                  <TransitionLink href="/chon-concept" onClick={closeAll} className="link-line block py-1 font-display text-[1.15rem] uppercase tracking-[0.04em] md:text-[0.95rem]">
                     Chọn concept giúp tôi
                   </TransitionLink>
                 </li>

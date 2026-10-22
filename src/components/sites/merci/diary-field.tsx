@@ -42,8 +42,8 @@ function shuffled<T>(list: T[], seed: number): T[] {
 const DRAG = 6;
 
 /**
- * Photos on an endless canvas. Every photo is fitted inside its own cell and only whole columns move at their own
- * speed, so neighbours keep their distance and nothing ever slides over anything else.
+ * Photos on an endless canvas, one per cell. Photos are a little larger than their cell, so neighbours overlap just
+ * at the edges. Only whole columns move at their own speed, so the overlap stays small however far you pan.
  */
 function GridField({ photos }: { photos: DiaryPhoto[] }) {
   const COLS = 12;
@@ -60,10 +60,10 @@ function GridField({ photos }: { photos: DiaryPhoto[] }) {
       photo: p,
       col: i % COLS,
       row: Math.floor(i / COLS),
-      jx: (rnd() - 0.5) * 0.2,
-      jy: (rnd() - 0.5) * 0.2,
+      jx: (rnd() - 0.5) * 0.12,
+      jy: (rnd() - 0.5) * 0.12,
       rot: (rnd() - 0.5) * 10,
-      fit: 0.8 + rnd() * 0.2,
+      fit: 0.86 + rnd() * 0.14,
       depth: colDepth[i % COLS],
     }));
   }, [photos]);
@@ -86,11 +86,11 @@ function GridField({ photos }: { photos: DiaryPhoto[] }) {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const wide = vw >= 768;
-      cw = wide ? vw * 0.25 : vw * 0.5;
-      ch = wide ? vh * 0.5 : vh * 0.34;
-      // the box a photo may fill inside its cell: the rest of the cell is breathing room
-      const boxW = cw * (wide ? 0.68 : 0.8);
-      const boxH = ch * (wide ? 0.8 : 0.82);
+      cw = wide ? vw * 0.14 : vw * 0.34;
+      ch = wide ? vh * 0.285 : vh * 0.2;
+      // the box a photo may fill is a little taller than its cell, so neighbours overlap just at the edges
+      const boxW = cw * (wide ? 0.97 : 0.95);
+      const boxH = ch * (wide ? 1.12 : 1.1);
       layout.forEach((it, i) => {
         const a = refs.current[i];
         if (!a) return;
@@ -221,7 +221,7 @@ function GridField({ photos }: { photos: DiaryPhoto[] }) {
           style={{ visibility: "hidden" }}
         >
           <span className="relative block size-full shadow-[0_14px_30px_-18px_rgb(27_23_19/0.5)] transition-transform duration-500 group-hover:scale-[1.05]" style={{ background: it.photo.tone }}>
-            <Image src={it.photo.src} alt="" fill sizes="(max-width: 767px) 40vw, 20vw" draggable={false} className="object-cover" />
+            <Image src={it.photo.src} alt="" fill sizes="(max-width: 767px) 40vw, 18vw" draggable={false} className="object-cover" />
           </span>
         </TransitionLink>
       ))}

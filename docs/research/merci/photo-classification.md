@@ -11,7 +11,6 @@ Tạo tự động bởi `scripts/build-merci-assets.py`, đừng sửa tay: s�
 | Concept (slug) | Bộ ảnh | Nguồn | Có bản gốc | Chờ bản gốc |
 | --- | --- | --- | ---: | ---: |
 | `lily-voan-trang` | Voan ren, corset, ngọc trai | FB 011–020, FB 030–039 | 16 | 4 |
-| `lily-voan-trang` | Lily, jeans, găng ren, rèm trắng | FB 021–029 | 7 | 2 |
 | `dem-tuyet-hoc-duong` | Áo thủy thủ, blazer, đèn lồng (2 ảnh ghép) | ảnh ghép FB 008, ảnh ghép FB 009 | 0 | 12 |
 | `nang-kem-mu-moc` | Mũ móc, váy lanh, phông vàng kem (Drive) | Drive 26, Drive 30, Drive 34, Drive 36 | 0 | 4 |
 | `thien-than-canh-den` | Cánh đen, váy dây, giày cao gót | FB 410–423 | 0 | 13 |
@@ -57,6 +56,7 @@ Tạo tự động bởi `scripts/build-merci-assets.py`, đừng sửa tay: s�
 | `ao-len-do-bob` | Áo len đỏ, tóc bob (ảnh ghép) | ảnh ghép FB 400 | 0 | 6 |
 | `cuc-hoa-mi` | Khăn họa tiết hoa nhí, cúc họa mi (Drive) | Drive 42, Drive 44, Drive 45, Drive 48 | 0 | 4 |
 | `vay-den-banh-trang` | Váy đen, ngọc trai, bánh kem trắng | FB 382–389 | 0 | 8 |
+| `lily-gang-ren` | Lily, găng ren, quần jeans, rèm xanh trắng | FB 021–029 | 7 | 2 |
 | `hai-nguoi` | Hai người, blazer đen và nâu | FB 201–210 | 0 | 10 |
 | `hai-nguoi` | Hai người, áo trắng quần đen | FB 237–242 | 0 | 6 |
 | `khan-len-sac-mau` | Khăn xanh cobalt; mũ khăn đỏ, ô đỏ (2 ảnh ghép) | ảnh ghép FB 004, ảnh ghép FB 007 | 0 | 12 |
@@ -70,14 +70,14 @@ Tạo tự động bởi `scripts/build-merci-assets.py`, đừng sửa tay: s�
 | `cong-chua-du-hoa` | Váy tulle kem, dù cài hoa, lily hồng (2 ảnh ghép) | ảnh ghép FB 073, ảnh ghép FB 077 | 12 | 0 |
 | `nang-som-can-mat` | Cận mặt, ánh sáng ấm (Drive) | Drive 24, Drive 25, Drive 31, Drive 39 | 0 | 4 |
 
-Tổng 585 ảnh trong 48 concept: 226 ảnh có bản gốc, 359 ảnh chờ bản gốc.
-Trên web: 26 concept. Ẩn 22 concept vì có dưới 4 ảnh nét.
+Tổng 585 ảnh trong 49 concept: 226 ảnh có bản gốc, 359 ảnh chờ bản gốc.
+Trên web: 27 concept. Ẩn 22 concept vì có dưới 4 ảnh nét.
 
 ## Cần thêm ảnh gốc (xếp theo concept)
 
 Bỏ ảnh lớn vào thư mục Drive `AnhFB`, rồi chạy `download-drive-folder.py`, `match-originals.py`, `build-merci-assets.py`.
 
-- `lily-voan-trang`: 6 ảnh, FB 015, 025, 029, 033–034, 038
+- `lily-voan-trang`: 4 ảnh, FB 015, 033–034, 038
 - `dem-tuyet-hoc-duong` (concept đang ẩn): 12 ảnh, ảnh ghép FB 008 (6 tile); ảnh ghép FB 009 (6 tile)
 - `nang-kem-mu-moc` (concept đang ẩn): 4 ảnh, Drive 26, 30, 34, 36
 - `thien-than-canh-den` (concept đang ẩn): 13 ảnh, FB 410–421, 423
@@ -111,6 +111,7 @@ Bỏ ảnh lớn vào thư mục Drive `AnhFB`, rồi chạy `download-drive-fol
 - `ao-len-do-bob` (concept đang ẩn): 6 ảnh, ảnh ghép FB 400 (6 tile)
 - `cuc-hoa-mi` (concept đang ẩn): 4 ảnh, Drive 42, 44, 45, 48
 - `vay-den-banh-trang` (concept đang ẩn): 8 ảnh, FB 382–389
+- `lily-gang-ren`: 2 ảnh, FB 025, 029
 - `hai-nguoi` (concept đang ẩn): 16 ảnh, FB 201–210, 237–242
 - `khan-len-sac-mau` (concept đang ẩn): 12 ảnh, ảnh ghép FB 004 (6 tile); ảnh ghép FB 007 (6 tile)
 - `lily-hong-quan-jeans`: 4 ảnh, FB 325–326, 328, 330
@@ -144,7 +145,7 @@ Bỏ ảnh lớn vào thư mục Drive `AnhFB`, rồi chạy `download-drive-fol
 - ảnh ghép FB 072 → `lily-hong-quan-jeans` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
 - ảnh ghép FB 075 → `gau-bong-net-ve` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
 - ảnh ghép FB 076 → `non-coi-vintage` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
-- ảnh ghép FB 078 → `lily-voan-trang` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
+- ảnh ghép FB 078 → `lily-gang-ren` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
 - ảnh ghép FB 079 → `vay-do-be-thuy-tinh` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
 - ảnh ghép FB 390 → `street-den` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
 - ảnh ghép FB 395 → `no-ruy-bang` (ghép theo mắt thường: cùng trang phục, đạo cụ, phông)
